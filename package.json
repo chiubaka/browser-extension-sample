@@ -1,0 +1,64 @@
+{
+  "name": "chiubaka",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "nx build",
+    "build:affected": "nx affected --target=build",
+    "build:ci": "yarn build:affected --base=$NX_BASE --head=$NX_HEAD",
+    "deploy": "nx deploy $@ --configuration=production",
+    "deploy:ci": "yarn deploy",
+    "lint": "nx lint",
+    "lint:affected": "nx affected --target=lint",
+    "lint:all": "yarn lint:root && yarn lint:packages",
+    "lint:ci": "yarn lint:root && yarn lint:affected --base=$NX_BASE --head=$NX_HEAD",
+    "lint:fix:all": "yarn lint:fix:root; yarn lint:fix:packages",
+    "lint:fix:packages": "yarn lint:packages --fix",
+    "lint:fix:root": "yarn lint:root --fix",
+    "lint:packages": "nx run-many --target=lint --all",
+    "lint:root": "yarn eslint .",
+    "lint:staged": "lint-staged",
+    "prepare": "husky install",
+    "start": "nx serve",
+    "test": "nx test",
+    "test:affected": "nx affected --target=test",
+    "test:ci": "yarn test:affected --ci --coverage --base=$NX_BASE --head=$NX_HEAD && yarn test:e2e:affected --base=$NX_BASE --head=$NX_HEAD",
+    "test:e2e": "nx run-many --target=e2e --all",
+    "test:e2e:affected": "nx affected --target=e2e"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chiubaka/browser-extension-sample.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chiubaka/browser-extension-sample/issues"
+  },
+  "homepage": "https://github.com/chiubaka/browser-extension-sample#readme",
+  "dependencies": {
+    "@chiubaka/nx-plugin": "0.2.0"
+  },
+  "devDependencies": {
+    "@chiubaka/eslint-config": "^0.5.0",
+    "@chiubaka/tsconfig": "^0.1.0",
+    "@nrwl/cli": "15.2.4",
+    "@nrwl/eslint-plugin-nx": "15.2.4",
+    "@nrwl/jest": "15.2.4",
+    "@nrwl/workspace": "15.2.4",
+    "eslint": "^8.33.0",
+    "husky": "^8.0.3",
+    "jest": "^28.1.3",
+    "lint-staged": "^13.1.0",
+    "nx": "15.2.4",
+    "prettier": "^2.8.3",
+    "ts-jest": "^28.0.8",
+    "tslib": "^2.5.0",
+    "typescript": "~4.8.2"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "packageManager": "yarn@3.4.1"
+}
