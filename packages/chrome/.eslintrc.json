@@ -1,0 +1,44 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": ["node_modules"],
+  "overrides": [
+    {
+      "files": [
+        "jest.config.ts",
+        "*.spec.ts",
+        "*.test.ts",
+        "*.spec.tsx",
+        "*.test.tsx"
+      ],
+      "parserOptions": {
+        "project": ["packages/chrome/tsconfig.spec.json"]
+      }
+    },
+    {
+      "files": ["*.stories.tsx"],
+      "parserOptions": {
+        "project": ["packages/chrome/.storybook/tsconfig.json"]
+      }
+    },
+    {
+      "excludedFiles": [
+        "jest.config.ts",
+        "*.spec.ts",
+        "*.test.ts",
+        "*.stories.tsx",
+        "*.spec.tsx",
+        "*.test.tsx"
+      ],
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": ["packages/chrome/tsconfig.app.json"]
+      }
+    },
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "react/react-in-jsx-scope": "off"
+      }
+    }
+  ]
+}
