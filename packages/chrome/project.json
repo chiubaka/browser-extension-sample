@@ -17,12 +17,13 @@
         "polyfills": "packages/chrome/src/polyfills.ts",
         "tsConfig": "packages/chrome/tsconfig.app.json",
         "assets": [
+          "packages/chrome/src/manifest.json",
           "packages/chrome/src/favicon.ico",
           "packages/chrome/src/assets"
         ],
         "styles": ["packages/chrome/src/styles.scss"],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "packages/chrome/webpack.config.ts"
       },
       "configurations": {
         "development": {

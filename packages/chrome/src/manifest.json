@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Sample Chrome Extension",
+  "description": "A sample Chrome Extension",
+  "version": "0.0.0",
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "index.html"
+  }
+}
