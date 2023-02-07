@@ -11,6 +11,10 @@
     "url": "https://github.com/chiubaka/browser-extension-sample/issues"
   },
   "homepage": "https://github.com/chiubaka/browser-extension-sample/blob/master/packages/chrome/README.md",
+  "dependencies": {
+    "@sentry/react": "^7.36.0",
+    "@sentry/tracing": "^7.36.0"
+  },
   "devDependencies": {
     "html-webpack-plugin": "^5.5.0",
     "jest": "^28.1.3",

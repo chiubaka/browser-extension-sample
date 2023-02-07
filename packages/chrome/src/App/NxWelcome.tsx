@@ -425,6 +425,13 @@ export function NxWelcome({ title }: { title: string }) {
               <span> Hello there, </span>
               Welcome {title} 👋
             </h1>
+            <button
+              onClick={() => {
+                throw new Error("Sentry test");
+              }}
+            >
+              Break the world
+            </button>
           </div>
 
           <div id="hero" className="rounded">
